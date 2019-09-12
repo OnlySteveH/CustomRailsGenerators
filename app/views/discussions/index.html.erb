@@ -1,0 +1,21 @@
+<h2>Discussions</h2>
+
+<p id="notice"><%= notice %></p>
+
+<hr>
+
+<div>
+  <% @discussions.each do |discussion| %>
+    <div class="content">
+		      <p><%= discussion.title %></p>
+			      <p><%= discussion.description %></p>
+			      <p><%= link_to 'Show', discussion %></p>
+      <p><%= link_to 'Edit', edit_discussion_path(discussion) %></p>
+      <p><%= link_to 'Delete', discussion, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    </div>
+  <% end %>
+</div>
+
+<br>
+
+<%= link_to 'Create a New Discussion', new_discussion_path %>
